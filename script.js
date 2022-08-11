@@ -58,17 +58,22 @@ async function getWeather(city) {
 
 function startApp() {
 	renderDate();
-	navigator.geolocation.getCurrentPosition(location => {
-		fetch(
-			`https://nominatim.openstreetmap.org/reverse?format=jsonv2
+	navigator.geolocation.getCurrentPosition(
+		location => {
+			fetch(
+				`https://nominatim.openstreetmap.org/reverse?format=jsonv2
 			&lat=${location.coords.latitude}
 			&lon=${location.coords.longitude}`
-		)
-			.then(res => res.json())
-			.then(data => {
-				getWeather(data.address.city).then(weather => renderWeather(weather));
-			});
-	});
+			)
+				.then(res => res.json())
+				.then(data => {
+					getWeather(data.address.city).then(weather => renderWeather(weather));
+				});
+		},
+		() => {
+			getWeather('London').then(weather => renderWeather(weather));
+		}
+	);
 }
 
 function createIcon(description) {
