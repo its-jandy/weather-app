@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weather App</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./styles.css">
+	<script defer src="./script.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="weather-side">
+			<div class="lds-ring loader">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="weather-gradient"></div>
+			<div class="date-container hidden">
+				<h2 class="date-dayname">Monday</h2><span class="date-day">15 Jul 2003</span><i class="location-icon"
+					data-feather="map-pin"></i><span class="location"></span>
+			</div>
+			<div class="weather-container hidden">
+				<i class="weather-icon" data-feather="sun"></i>
+				<h1 class="weather-temp"></h1>
+				<h3 class="weather-desc"></h3>
+			</div>
+		</div>
+	</div>
+	<div class="location-container">
+		<button class="location-button"> <i data-feather="map-pin"></i><span>Change location</span></button>
+		<form hidden class="location-form">
+			<input placeholder="Enter your city" class="location-input" type="text">
+		</form>
+		<span class="location-message"></span>
+	</div>
+	
+	<script src="https://unpkg.com/feather-icons"></script>
+</body>
+</html>
