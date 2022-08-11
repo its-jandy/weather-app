@@ -1,4 +1,4 @@
-# weather-app
+# Weather App
 
 [GitHub Pages](https://its-jandy.github.io/weather-app/)
 
