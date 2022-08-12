@@ -49,8 +49,6 @@ async function getWeather(city) {
 		locationMessage.textContent = '';
 		return weather;
 	} else {
-		let timeout;
-		clearTimeout(timeout);
 		locationMessage.textContent = 'Try to enter again';
 		loaderSwitch();
 	}
