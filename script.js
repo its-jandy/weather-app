@@ -82,10 +82,10 @@ function createIcon(description) {
 	icon.classList.add('weather-icon');
 	if (description.includes('cloud') || description.includes('overcast')) {
 		icon.src = './images/cloud.svg';
-	} else if (description.includes('thunder')) {
-		icon.src = './images/thunder.svg';
 	} else if (description.includes('rain')) {
 		icon.src = './images/rain.svg';
+	} else if (description.includes('thunder')) {
+		icon.src = './images/thunder.svg';
 	} else {
 		icon.src = './images/sun.svg';
 	}
