@@ -1,7 +1,7 @@
 'use strict';
 feather.replace();
 
-const API_KEY = '4b1692916e6d4bb895690216222408';
+let API_KEY;
 const loader = document.querySelector('.loader');
 const locationButton = document.querySelector('.location-button');
 const locationForm = document.querySelector('.location-form');
@@ -15,7 +15,7 @@ const dateContainer = document.querySelector('.date-container');
 const dateWeekday = document.querySelector('.date-dayname');
 const dateFullDate = document.querySelector('.date-day');
 
-startApp();
+getApiKey();
 
 locationButton.addEventListener('click', function () {
 	this.hidden = true;
@@ -38,6 +38,14 @@ locationForm.addEventListener('submit', function (e) {
 	getWeather(locationInput.value).then(weather => renderWeather(weather));
 	locationInput.value = '';
 });
+
+async function getApiKey() {
+	let res = await fetch('./config.json');
+	let data = await res.json();
+	API_KEY = data.API_KEY;
+
+	startApp();
+}
 
 async function getWeather(city) {
 	const response = await fetch(
