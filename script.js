@@ -1,7 +1,7 @@
 'use strict';
 feather.replace();
 
-const API_KEY = '51603b0aaddd43259ef95639220908';
+const API_KEY = '4b1692916e6d4bb895690216222408';
 const loader = document.querySelector('.loader');
 const locationButton = document.querySelector('.location-button');
 const locationForm = document.querySelector('.location-form');
